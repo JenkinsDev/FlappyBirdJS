@@ -11,7 +11,7 @@ define(['require', 'stage', 'libs/createjs'], function(require, stage, createjs)
     }
 
     Game.prototype.loop = function() {
-        
+        console.log('test');
     }
 
     // No reason to return Game, but it'll be useful possibly in the future.
