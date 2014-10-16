@@ -6,13 +6,12 @@ define(['require', 'stage', 'libs/createjs'], function(require, stage, createjs)
 
         // Set EaselJS to run the loop method every
         // "tick."
-        console.log(createjs);
         createjs.Ticker.setFPS(this.fps);
         createjs.Ticker.addEventListener("tick", this.loop);
     }
 
     Game.prototype.loop = function() {
-        console.log('test');
+        
     }
 
     // No reason to return Game, but it'll be useful possibly in the future.
