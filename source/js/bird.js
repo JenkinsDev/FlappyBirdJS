@@ -1,15 +1,15 @@
 define(['libs/createjs'], function(createjs) {
     Bird = function() {
-        this.character = createjs.Shape(this._drawBird());
+        this.character = new createjs.Shape(this._drawBird());
     }
     
     Bird.prototype._drawBird = function() {
         // For the time being we will use a shape, later we will change
         // this to the Sprite object.
-        return createjs.Graphics.beginFill("#dddd00").drawRect(0, 0, 100, 100);
+        return new createjs.Graphics().beginFill("#dd0000").drawRect(0, 20, 10, 10);
     }
 
-    Bird.prototype.getCharacter = function() {
+    Bird.prototype.getDisplayObject = function() {
         return this.character;
     }
 

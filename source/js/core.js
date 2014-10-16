@@ -1,19 +1,21 @@
 define(['require', 'stage', 'libs/createjs'], function(require, stage, createjs) {
-    Game = function() {
+    Game = function(stage) {
         // Set up some of our default values!
         this.play_game = true;
         this.fps = 30;
+        this.stage = stage;
 
-        // Set EaselJS to run the loop method every
-        // "tick."
         createjs.Ticker.setFPS(this.fps);
-        createjs.Ticker.addEventListener("tick", this.loop);
+
+        // We make use of the bind Function method to pass in this instance
+        // to the loop method.
+        createjs.Ticker.addEventListener("tick", this.loop.bind(this));
     }
 
     Game.prototype.loop = function() {
-        console.log('test');
+        this.stage.update();
     }
 
     // No reason to return Game, but it'll be useful possibly in the future.
-    return new Game();
+    return new Game(stage);
 });
