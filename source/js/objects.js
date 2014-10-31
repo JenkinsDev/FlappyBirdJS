@@ -28,10 +28,10 @@ define(['physics'], function(physics) {
      * Sets and returns the underlying character, this will always
      * be some sort of instance of DisplayObject();
      *
-     * @return createjs.setObject();
+     * @return void
      */
     GameObject.prototype.setDisplayObject = function(character) {
-        return this.character = character;
+        this.character = character;
     }
 
     /**
