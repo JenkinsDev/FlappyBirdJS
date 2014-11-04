@@ -8,7 +8,7 @@ define(['libs/createjs', 'objects'], function(createjs, game_object) {
      * @return null
      */
     Bird = function() {
-        this.character = new createjs.Shape(this.graphics());
+        this._character = new createjs.Shape(this.graphics());
     }
 
     // Our bird is a game object so we will inherit from it.
@@ -36,10 +36,10 @@ define(['libs/createjs', 'objects'], function(createjs, game_object) {
      * @return void 
      */
     Bird.prototype.update = function() {
-        if (this.character.x >= window.outerWidth)
+        if (this._character.x >= window.outerWidth)
             console.log('true');
         else
-            this.character.x += 5;
+            this._character.x += 5;
     }
 
     return new Bird();

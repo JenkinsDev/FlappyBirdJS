@@ -9,10 +9,7 @@ define(function() {
      */
     Canvas = function() {
         this._id = null;
-        
-        // We want to make sure we keep the canvas's aspect ratio
-        // correct during a browser resize.
-        window.addEventListener('resize', this.onResize.bind(this), false);
+        this._canvas = null;
     }
     
     /**
@@ -60,6 +57,14 @@ define(function() {
         
         this._canvas = canvas;
         this._id = id;
+        
+        // We want to make sure we keep the canvas's aspect ratio
+        // correct during a browser resize.
+        window.addEventListener('resize', this.onResize.bind(this), false);
+        
+        // After setting our event handler we want to actually call the onResize()
+        // method once so we can snap the canvas to the right proportions off the bat!
+        this.onResize();
 
         return this;
     }

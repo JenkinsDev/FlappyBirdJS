@@ -8,8 +8,8 @@ define(['physics'], function(physics) {
      * @return GameObject();
      */
     GameObject = function(physics) {
-        this.character = null;
-        this.physics = physics;
+        this._character = null;
+        this._physics = physics;
     }
 
     /**
@@ -20,7 +20,7 @@ define(['physics'], function(physics) {
      * @return Physics();
      */
     GameObject.prototype.getPhysics = function() {
-        return this.physics;
+        return this._physics;
     }
 
     /**
@@ -32,7 +32,7 @@ define(['physics'], function(physics) {
      * @return void
      */
     GameObject.prototype.setDisplayObject = function(character) {
-        this.character = character;
+        this._character = character;
     }
 
     /**
@@ -44,7 +44,7 @@ define(['physics'], function(physics) {
      * @return createjs.DisplayObject();
      */
     GameObject.prototype.getDisplayObject = function() {
-        return this.character;
+        return this._character;
     }
 
     /**
@@ -56,7 +56,7 @@ define(['physics'], function(physics) {
      * @return createjs.Stage();
      */
     GameObject.prototype.getStage = function() {
-        return this.character.getStage();
+        return this._character.getStage();
     }
     
     /**
