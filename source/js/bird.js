@@ -1,4 +1,5 @@
 define(['libs/createjs', 'objects'], function(createjs, game_object) {
+    
     /**
      * Bird();
      *
@@ -25,6 +26,22 @@ define(['libs/createjs', 'objects'], function(createjs, game_object) {
         // this to the Sprite object.
         return new createjs.Graphics().beginFill("#dd0000").drawRect(0, 20, 10, 10);
     }
+    
+    /**
+     * Bird::update();
+     * 
+     * This is called for every by our stage everytime the page updates.
+     * This should only be called when an object is rendered on the page.
+     * 
+     * @return void 
+     */
+    Bird.prototype.update = function() {
+        if (this.character.x >= window.outerWidth)
+            console.log('true');
+        else
+            this.character.x += 5;
+    }
 
     return new Bird();
+
 });

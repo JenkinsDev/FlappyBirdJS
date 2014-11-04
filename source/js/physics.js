@@ -3,7 +3,5 @@ define(function() {
 
     }
 
-    
-
     return new Physics();
 });

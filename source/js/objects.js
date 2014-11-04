@@ -1,4 +1,5 @@
 define(['physics'], function(physics) {
+    
     /**
      * GameObject();
      *
@@ -57,6 +58,19 @@ define(['physics'], function(physics) {
     GameObject.prototype.getStage = function() {
         return this.character.getStage();
     }
+    
+    /**
+     * GameObject::update();
+     * 
+     * This is called for every by our stage everytime the page updates.
+     * This should only be called when an object is rendered on the page.
+     * 
+     * @return void 
+     */
+    GameObject.prototype.update = function() {
+        throw Error("GameObject MUST have their own update methods.");
+    }
 
     return new GameObject(physics);
+
 });
